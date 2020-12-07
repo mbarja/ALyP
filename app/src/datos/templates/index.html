@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ALyP</title>
-    <script type="text/javascript" src="statics/jquery-3.5.1.js"></script>
-    <script type="text/javascript" src="statics/bootstrap/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="statics/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="statics/estilos.css">
-   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.ui.position.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
             function vaciarFormulario(){
                 $('#dni').val("");
@@ -106,7 +107,7 @@
 
                     $.ajax({
                         type        : 'POST',
-                        url         : '/cgi-bin/app.py',
+                        url         : '/alta_datos',
                         data        : formData,
                         dataType    : 'json',
                         encode      : true
@@ -135,9 +136,14 @@
             Formulario de ingreso de datos personales
         </a>
     </nav>
-    <br><br>
-    <div class="content" style="width: 30%">
-        <form id="alta_datos" action="/cgi-bin/app.py"  method="post">
+
+    <div class="container p-3 my-3 bg-primary text-white">
+        <h3>Términos y condiciones</h3>
+        <p>Los datos ingresados en el siguiente formulario serán recolectados para la cátedra de
+        Aspectos Legales y Profesionales de la UNPSJB. No serán publicados ni distribuidos.</p>
+    </div>
+    <div class="container p-3 my-3 border" style="width: 30%">
+        <form id="alta_datos" action="/alta_datos"  method="post">
                 <div class="form-group">
                     <label for="dni">Dni</label>
                     <input type="number" class="form-control" id="dni" name="dni"  required>
